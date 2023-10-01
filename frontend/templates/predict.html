@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict</title>
+</head>
+<body>
+    <h1>Predict</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Predict</button>
+    </form>
+    <div id="prediction-result">
+        {% if prediction %}
+            <p>Prediction: {{ prediction }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
